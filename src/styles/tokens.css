@@ -1,0 +1,88 @@
+/* =========================================================================
+   DESIGN TOKENS
+   Single source for colour, type, space, radius, motion and layering.
+   Contrast checked against #0E1013 (and #15181C for surfaces):
+     text   15.40:1   text-2  7.47:1   text-3  5.45:1
+     signal  8.47:1   ok      9.18:1   warn    5.98:1
+   ========================================================================= */
+
+:root {
+  color-scheme: dark;
+
+  /* ---- colour: ground and surfaces ---- */
+  --bg: #0e1013;
+  --surface: #15181c;
+  --surface-2: #1b1f24;
+  --border: #2a2f36;
+  --border-strong: #3a424c;
+
+  /* ---- colour: ink ---- */
+  --text: #e6e7e9;
+  --text-2: #9ba3ad;
+  --text-3: #818a96;
+
+  /* ---- colour: the single signal ---- */
+  --signal: #c8a96a;
+  --signal-soft: rgb(200 169 106 / 0.12);
+  --signal-line: rgb(200 169 106 / 0.35);
+  --ok: #8fbf9f;
+  --warn: #c97c6d;
+
+  /* ---- type ---- */
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+
+  --fs-0: 0.6875rem; /* 11px — meta */
+  --fs-1: 0.75rem; /* 12px — eyebrows */
+  --fs-2: 0.875rem; /* 14px — secondary */
+  --fs-3: 1rem; /* 16px — body */
+  --fs-4: 1.1875rem; /* 19px — lead */
+  --fs-5: 1.5rem; /* 24px — subhead */
+  --fs-6: 2.125rem; /* 34px — section */
+  --fs-7: clamp(2.5rem, 6.5vw, 4.25rem); /* display */
+  --fs-hero: clamp(2.75rem, 7vw, 5.25rem);
+
+  --lh-tight: 1.03;
+  --lh-snug: 1.18;
+  --lh-body: 1.65;
+
+  --tracking-wide: 0.16em;
+  --tracking-mono: 0.02em;
+
+  /* ---- space: 4px base ---- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+
+  --gutter: clamp(1.25rem, 4.5vw, 3.5rem);
+  --section-y: clamp(5rem, 11vw, 9.5rem);
+  --content-max: 74rem;
+  --measure: 64ch;
+  --rule: 1px;
+
+  /* ---- radius ---- */
+  --r-xs: 3px;
+  --r-sm: 5px;
+  --r-md: 8px;
+
+  /* ---- motion ---- */
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* ---- layering ---- */
+  --z-base: 0;
+  --z-nav: 40;
+  --z-palette: 100;
+  --z-skip: 200;
+}

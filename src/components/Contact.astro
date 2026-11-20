@@ -1,0 +1,102 @@
+---
+import { site } from '../site.config';
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+const c = site.contact;
+---
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container split">
+    <div class="split-aside">
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h2 class="section-title" id="contact-title">{c.heading}</h2>
+      <p class="muted measure">{c.lede}</p>
+      <p class="contact-response mono dim">{c.response}</p>
+    </div>
+
+    <div class="split-main">
+      <form class="contact-form" data-contact-form novalidate>
+        <div class="field">
+          <label for="cf-name">{c.fields.name}</label>
+          <input
+            id="cf-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            maxlength="120"
+            placeholder={c.placeholders.name}
+            aria-describedby="err-cf-name"
+            required
+          />
+          <p class="field-error" id="err-cf-name" data-error-for="name" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="cf-email">{c.fields.email}</label>
+          <input
+            id="cf-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            maxlength="254"
+            placeholder={c.placeholders.email}
+            aria-describedby="err-cf-email"
+            required
+          />
+          <p class="field-error" id="err-cf-email" data-error-for="email" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="cf-message">{c.fields.message}</label>
+          <textarea
+            id="cf-message"
+            name="message"
+            rows="6"
+            maxlength="4000"
+            placeholder={c.placeholders.message}
+            aria-describedby="err-cf-message"
+            required
+          ></textarea>
+          <p class="field-error" id="err-cf-message" data-error-for="message" hidden></p>
+        </div>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="cf-website">{c.fields.website}</label>
+          <input
+            id="cf-website"
+            name="website"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
+        <div
+          class="turnstile"
+          data-turnstile
+          data-site-key={turnstileSiteKey}
+          aria-label="Verification"
+        >
+        </div>
+
+        <div class="form-actions">
+          <button class="button" type="submit" data-submit>
+            {c.submit}
+          </button>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </div>
+      </form>
+
+      <noscript>
+        <p class="notes-body">
+          This form needs JavaScript. You can reach me directly at
+          <a class="link" href={site.links.email}>{site.links.email}</a>.
+        </p>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/contact';
+</script>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AH">
+  <rect width="64" height="64" fill="#0E1013"/>
+  <rect x="0.5" y="0.5" width="63" height="63" fill="none" stroke="#2A2F36"/>
+  <path d="M12 20v24M52 20v24M12 32h40" stroke="#2A2F36" stroke-width="1"/>
+  <text x="32" y="40" text-anchor="middle" font-family="ui-monospace, monospace" font-size="24" letter-spacing="2" fill="#C8A96A">AH</text>
+</svg>

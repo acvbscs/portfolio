@@ -1,0 +1,35 @@
+---
+import { site } from '../site.config';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={`${site.identity.name} — home`} data-jump="h">
+      {site.identity.initials}
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        {
+          site.nav.map((item) => (
+            <li>
+              <a class="nav-link" href={item.href} data-jump={item.key}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <button
+      class="palette-trigger"
+      type="button"
+      data-palette-open
+      aria-label="Open command palette"
+    >
+      <span>Navigate</span>
+      <kbd>⌘K</kbd>
+    </button>
+  </div>
+</header>

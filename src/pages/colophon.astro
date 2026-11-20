@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout title="Colophon" path="/colophon">
+  <header class="page-head">
+    <div class="container">
+      <p class="eyebrow">{site.colophon.eyebrow}</p>
+      <h1 class="page-title">{site.colophon.title}</h1>
+      <p class="page-intro">{site.colophon.intro}</p>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <div class="container">
+      <dl class="doc-list">
+        {
+          site.colophon.rows.map((row) => (
+            <div class="doc-row">
+              <dt>{row.label}</dt>
+              <dd>{row.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="doc-note">{site.colophon.note}</p>
+    </div>
+  </div>
+</BaseLayout>

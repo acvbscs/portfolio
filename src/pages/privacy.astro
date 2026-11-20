@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout title="Privacy" path="/privacy">
+  <header class="page-head">
+    <div class="container">
+      <p class="eyebrow">{site.privacy.eyebrow}</p>
+      <h1 class="page-title">{site.privacy.title}</h1>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <div class="container">
+      {
+        site.privacy.sections.map((section) => (
+          <section class="legal-section">
+            <h2>{section.heading}</h2>
+            <p>{section.body}</p>
+          </section>
+        ))
+      }
+      <p class="legal-updated">last updated {site.privacy.updated}</p>
+    </div>
+  </div>
+</BaseLayout>

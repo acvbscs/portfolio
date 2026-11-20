@@ -1,0 +1,29 @@
+---
+// The keymap overlay. Press ? anywhere outside an input to reveal it.
+---
+
+<div class="shortcuts" data-shortcuts hidden>
+  <div class="shortcuts-backdrop" data-shortcuts-close aria-hidden="true"></div>
+
+  <div class="shortcuts-panel" role="dialog" aria-modal="true" aria-labelledby="shortcuts-title">
+    <h2 class="shortcuts-title mono" id="shortcuts-title">keymap</h2>
+
+    <dl class="shortcuts-list">
+      <div><dt><kbd>⌘K</kbd> / <kbd>ctrl K</kbd></dt><dd>command palette</dd></div>
+      <div><dt><kbd>j</kbd> / <kbd>k</kbd></dt><dd>move through commands</dd></div>
+      <div><dt><kbd>enter</kbd></dt><dd>run command</dd></div>
+      <div><dt><kbd>g</kbd> then <kbd>h</kbd></dt><dd>home</dd></div>
+      <div><dt><kbd>g</kbd> then <kbd>a</kbd></dt><dd>about</dd></div>
+      <div><dt><kbd>g</kbd> then <kbd>w</kbd></dt><dd>work</dd></div>
+      <div><dt><kbd>g</kbd> then <kbd>c</kbd></dt><dd>contact</dd></div>
+      <div><dt><kbd>g</kbd> then <kbd>g</kbd></dt><dd>top of page</dd></div>
+      <div><dt><kbd>G</kbd></dt><dd>bottom of page</dd></div>
+      <div><dt><kbd>?</kbd></dt><dd>this keymap</dd></div>
+      <div><dt><kbd>esc</kbd></dt><dd>close everything</dd></div>
+    </dl>
+
+    <button class="shortcuts-close mono" type="button" data-shortcuts-close>
+      esc / close
+    </button>
+  </div>
+</div>

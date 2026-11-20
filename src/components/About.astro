@@ -1,0 +1,43 @@
+---
+import { site } from '../site.config';
+---
+
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container split">
+    <div class="split-aside">
+      <p class="eyebrow">{site.about.eyebrow}</p>
+      <h2 class="section-title" id="about-title">{site.about.heading}</h2>
+    </div>
+
+    <div class="split-main">
+      <div class="prose reveal">
+        {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+
+      <div class="about-meta reveal">
+        <div>
+          <p class="meta-label mono">Languages</p>
+          <ul class="tag-list">
+            {site.about.languages.map((language) => <li class="tag">{language}</li>)}
+          </ul>
+        </div>
+
+        <div>
+          <p class="meta-label mono">Details</p>
+          <dl class="fact-list">
+            {
+              site.about.facts.map((fact) => (
+                <div>
+                  <dt>{fact.label}</dt>
+                  <dd class={fact.placeholder ? 'is-placeholder' : undefined}>
+                    {fact.value}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

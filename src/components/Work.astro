@@ -1,0 +1,50 @@
+---
+import { site } from '../site.config';
+---
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">{site.work.eyebrow}</p>
+      <h2 class="section-title" id="work-title">{site.work.heading}</h2>
+      <p class="muted measure">{site.work.note}</p>
+    </div>
+
+    <ul class="work-list">
+      {
+        site.work.items.map((item) => (
+          <li class="work-item reveal">
+            <span class="work-index mono">{item.index}</span>
+
+            <div class="work-body">
+              <div class="work-top">
+                <h3 class="work-title">
+                  {item.href ? (
+                    <a class="link card-link" href={item.href}>
+                      {item.title}
+                    </a>
+                  ) : (
+                    item.title
+                  )}
+                </h3>
+                <span class="work-meta mono">
+                  {item.kind} · {item.year}
+                </span>
+              </div>
+
+              <p class="work-summary muted">{item.summary}</p>
+
+              <ul class="tag-list work-stack">
+                {item.stack.map((tech) => (
+                  <li class="tag">{tech}</li>
+                ))}
+              </ul>
+            </div>
+
+            {item.placeholder && <span class="work-flag mono">placeholder</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
